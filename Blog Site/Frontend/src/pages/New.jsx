@@ -46,16 +46,15 @@ const New = ({ getBlogs }) => {
           <label htmlFor="">Title: </label>
           <input type="text" onChange={handlechange} name='title' value={blog.title} placeholder="Enter title" className="border p-2 rounded w-full mb-4" autoFocus />
           <label htmlFor="">Content: </label>
-          <textarea onChange={handlechange} placeholder="Enter the contents"  name='content' value={blog.content} rows="8" className="border p-2 rounded w-full mb-4"></textarea>
-          {/* <CKEditor
+          {/* <textarea onChange={handlechange} placeholder="Enter the contents"  name='content' value={blog.content} rows="8" className="border p-2 rounded w-full mb-4"></textarea> */}
+          <CKEditor
             editor={ClassicEditor}
             data={blog.content}
             onChange={(event, editor) => {
               const data = editor.getData();
-              // setContent(data);
               handlechange({ target: { name: 'content', value: data } });
             }}
-          /> */}
+          />
           <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Submit</button>
         </form>
       </section>
